@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minimal Photo Gallery</title>
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery-bundle.min.css"
+  />
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f7f7f7;
+      margin: 0;
+      padding: 2rem;
+    }
+    #gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    #gallery a img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+    #gallery a:hover img {
+      transform: scale(1.02);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>My Gallery</h1>
+  <div id="gallery" class="lightgallery">
+    <a href="https://source.unsplash.com/random/1200x800?sig=1">
+      <img src="https://source.unsplash.com/random/300x200?sig=1" alt="Image 1" />
+    </a>
+    <a href="https://source.unsplash.com/random/1200x800?sig=2">
+      <img src="https://source.unsplash.com/random/300x200?sig=2" alt="Image 2" />
+    </a>
+    <a href="https://source.unsplash.com/random/1200x800?sig=3">
+      <img src="https://source.unsplash.com/random/300x200?sig=3" alt="Image 3" />
+    </a>
+    <!-- Add more <a><img></a> blocks as needed -->
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/zoom/lg-zoom.umd.min.js"></script>
+  <script>
+    lightGallery(document.querySelector(".lightgallery"), {
+      plugins: [lgZoom],
+      speed: 300,
+    });
+  </script>
+</body>
+</html>
