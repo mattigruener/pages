@@ -3,48 +3,79 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Minimal Photo Gallery</title>
+  <title>Tokyo Streets — May 2025</title>
   <link
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery-bundle.min.css"
   />
   <style>
     body {
-      font-family: sans-serif;
-      background: #f7f7f7;
+      font-family: 'Helvetica Neue', sans-serif;
+      background: #fefefe;
       margin: 0;
-      padding: 2rem;
+      padding: 3rem 1rem;
+      color: #222;
+      line-height: 1.6;
+      max-width: 960px;
+      margin-left: auto;
+      margin-right: auto;
     }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .date {
+      color: #888;
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+
+    p.description {
+      max-width: 600px;
+      margin-bottom: 2rem;
+    }
+
     #gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 1rem;
     }
+
     #gallery a img {
       width: 100%;
       border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: transform 0.2s;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s ease;
     }
+
     #gallery a:hover img {
-      transform: scale(1.02);
+      transform: scale(1.015);
     }
   </style>
 </head>
 <body>
 
-  <h1>My Gallery</h1>
+  <h1>Tokyo Streets</h1>
+  <div class="date">May 2025</div>
+  <p class="description">
+    A walk through Tokyo's vibrant neighborhoods — from hidden alleyways in Shimokitazawa to neon-lit crossings in Shibuya. These photos capture the mood, color, and energy of the city.
+  </p>
+
   <div id="gallery" class="lightgallery">
-    <a href="https://source.unsplash.com/random/1200x800?sig=1">
-      <img src="https://source.unsplash.com/random/300x200?sig=1" alt="Image 1" />
+    <a href="https://images.unsplash.com/photo-1517821365206-782acbff4894?auto=format&fit=crop&w=1600&q=80">
+      <img src="https://images.unsplash.com/photo-1517821365206-782acbff4894?auto=format&fit=crop&w=400&q=60" alt="Tokyo 1" />
     </a>
-    <a href="https://source.unsplash.com/random/1200x800?sig=2">
-      <img src="https://source.unsplash.com/random/300x200?sig=2" alt="Image 2" />
+    <a href="https://images.unsplash.com/photo-1599658880436-c61792e70672?auto=format&fit=crop&w=1600&q=80">
+      <img src="https://images.unsplash.com/photo-1599658880436-c61792e70672?auto=format&fit=crop&w=400&q=60" alt="Tokyo 2" />
     </a>
-    <a href="https://source.unsplash.com/random/1200x800?sig=3">
-      <img src="https://source.unsplash.com/random/300x200?sig=3" alt="Image 3" />
+    <a href="https://images.unsplash.com/photo-1502767089025-6572583495b9?auto=format&fit=crop&w=1600&q=80">
+      <img src="https://images.unsplash.com/photo-1502767089025-6572583495b9?auto=format&fit=crop&w=400&q=60" alt="Tokyo 3" />
     </a>
-    <!-- Add more <a><img></a> blocks as needed -->
+    <a href="https://images.unsplash.com/photo-1585559602344-ef54f38705c9?auto=format&fit=crop&w=1600&q=80">
+      <img src="https://images.unsplash.com/photo-1585559602344-ef54f38705c9?auto=format&fit=crop&w=400&q=60" alt="Tokyo 4" />
+    </a>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.umd.min.js"></script>
