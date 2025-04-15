@@ -297,19 +297,31 @@
   <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.umd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/zoom/lg-zoom.umd.min.js"></script>
   <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+
+  <!-- Initialize Masonry FIRST -->
   <script>
-    lightGallery(document.querySelector(".lightgallery"), {
-      plugins: [lgZoom],
-      speed: 300,
-    });
-  </script>
-  <script>
-    new Masonry('#gallery', {
-      itemSelector: 'a',
-      columnWidth: 'a',
+    const grid = document.querySelector("#gallery");
+  
+    const masonry = new Masonry(grid, {
+      itemSelector: "a",
+      columnWidth: "a",
       percentPosition: true,
       gutter: 16
     });
+  
+    // Wait until images are loaded before laying out
+    imagesLoaded(grid, function () {
+      masonry.layout();
+    });
   </script>
+  
+  <!-- THEN initialize LightGallery -->
+  <script>
+    lightGallery(grid, {
+      plugins: [lgZoom],
+      speed: 300
+    });
+  </script>
+  
 </body>
 </html>
